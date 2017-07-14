@@ -37,9 +37,14 @@
               <a href="/topfotos/<%=topfoto.id%>" class="white-text btn-flat waves-effect white btn-floating right" data-method="delete"><i class="material-icons black-text">delete</i></a>
               <div class="row">
                 <%= form_for(:comment,url: comments_path) do |f| %>
-                <div class="input-field col s12">
-                  <input name="comment[comentario]" type="text" placeholder="Comente">
+                <div class="input-field col s11">
+                  <input name="comment[comentario]" type="text" placeholder="Comente" required>
                   <input name="comment[topfoto_id]" type="hidden" value="<%=topfoto.id%>">
+                </div>
+                <div class="col s1">
+                  <button type="submit" class="btn-flat waves-effect btn-floating white">
+                    <i class="material-icons right green-text">send</i>
+                  </button>
                 </div>
                 <%end%>
               </div>

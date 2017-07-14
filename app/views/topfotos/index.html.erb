@@ -1,3 +1,4 @@
+<%= render 'form', topfoto: @topfoto %>
 <%if notice%>
   <script>
     Materialize.toast('<%=notice%>', 4000)
@@ -5,11 +6,11 @@
 <%end%>
     <% @topfotos.each do |topfoto| %>
       <div class="row">
-        <div class="col s12 m12 l6 push-l3">
+        <div class="col s12 m12 l10 push-l1">
           <div class="card">
             <br>
             <div class="row">
-              <div class="col s1">
+              <div class="col s1 ">
                 <img src="http://lorempixel.com/30/30/people/" class="circle">
               </div>
               <div class="col s11">
@@ -17,7 +18,7 @@
                 <small class="right" style="margin-right:10px">Há <%=time_ago_in_words(topfoto.created_at)%></small>
               </div>
             </div>
-            <div class="card-image waves-effect waves-block waves-light">
+            <div class="card-image waves-block ">
               <%= image_tag topfoto.foto.url %>
             </div>
             <div class="card-content">
@@ -25,25 +26,23 @@
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Comentários<i class="material-icons right">close</i></span>
-                <%topfoto.comments.each do |item|%>
-
-                  <strong>Marcos JR</strong> <%=item.comentario%> - <small>Há <%=time_ago_in_words(item.created_at)%></small><br>
-
+                <%topfoto.comments.order('id DESC').each do |item|%>
+                  <strong>Anônimo</strong><br><%=item.comentario%> <br><small>Há <%=time_ago_in_words(item.created_at)%></small><br><br>
                 <%end%>
             </div>
             <div class="card-action">
               <button class="white-text btn-flat waves-effect white btn-floating "><i class="material-icons red-text">favorite</i></button>
-              <button class="white-text btn-flat waves-effect white btn-floating activator"><i class="material-icons black-text">chat_bubble_outline</i></button>
+              <button class="white-text btn-flat waves-effect white btn-floating activator"><i class="material-icons black-text">chat_bubble_outline</i> </button><%=topfoto.comments.count%>
               <a href="/topfotos/<%=topfoto.id%>" class="white-text btn-flat waves-effect white btn-floating right" data-method="delete"><i class="material-icons black-text">delete</i></a>
               <div class="row">
                 <%= form_for(:comment,url: comments_path) do |f| %>
-                <div class="input-field col s11">
+                <div class="col s10 m11 l11">
                   <input name="comment[comentario]" type="text" placeholder="Comente" required>
                   <input name="comment[topfoto_id]" type="hidden" value="<%=topfoto.id%>">
                 </div>
-                <div class="col s1">
-                  <button type="submit" class="btn-flat waves-effect btn-floating white">
-                    <i class="material-icons right green-text">send</i>
+                <div class="col s2 m1  l1">
+                  <button type="submit" class="btn-flat waves-effect btn-floating white right">
+                    <i class="material-icons right blue-text">send</i>
                   </button>
                 </div>
                 <%end%>
@@ -54,5 +53,5 @@
       </div>
     <% end %>
 <div class="fixed-action-btn vertical">
-  <a href="/topfotos/new" class="btn-floating btn-large waves-effect waves-light pink"><i class="material-icons">add</i></a>
+  <a href="/topfotos/new" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">add</i></a>
 </div>

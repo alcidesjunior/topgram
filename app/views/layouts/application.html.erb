@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
@@ -18,7 +19,7 @@
               <div class="col s4 m3">
                 <%= image_tag "topgram.png", id:"toplogo"%>
               </div>
-              <div class="col s3 m3">
+              <div class="col s3 m3 logotext">
                  Topgram
               </div>
             </div>
@@ -26,6 +27,8 @@
         </div>
       </nav>
     </div>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

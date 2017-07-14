@@ -4,7 +4,8 @@ class TopfotosController < ApplicationController
   # GET /topfotos
   # GET /topfotos.json
   def index
-    @topfotos = Topfoto.all
+    @topfotos = Topfoto.all.order('id DESC')
+    @topfoto = Topfoto.new
   end
 
   # GET /topfotos/1
@@ -28,7 +29,7 @@ class TopfotosController < ApplicationController
 
     respond_to do |format|
       if @topfoto.save
-        format.html { redirect_to @topfoto, notice: 'Topfoto was successfully created.' }
+        format.html { redirect_to '/', notice: 'Topfoto was successfully created.' }
         format.json { render :show, status: :created, location: @topfoto }
       else
         format.html { render :new }

@@ -3,7 +3,7 @@
  *= require_self
  */
 @import "materialize/components/color";
-$primary-color: color("pink", "darken-2") !default;
+$primary-color: color("grey", "darken-4") !default;
 $secondary-color: color("pink", "darken-3") !default;
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "materialize";
@@ -34,7 +34,11 @@ $mobile-xs-width: 357px;
     @content;
   }
 }
+.logotext{
+font-family: 'Courgette', cursive;
+}
 #toplogo{
+  filter: invert(100%);
   @include desktop{
     width: 90%;
   }

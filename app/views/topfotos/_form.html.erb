@@ -10,18 +10,22 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :descricao %>
-    <%= f.text_field :descricao %>
+<div class="row">
+    <div class="col m10 s12 push-m1">
+      <%= f.text_area :descricao, placeholder: "No que você está pensando?", class:"materialize-textarea", required: true%>
+    </div>
+</div>
+<div class="row">
+  <div class="col m4 s6 l6 push-l1">
+    <div class="file-field">
+      <div class="btn waves-effect blue btn-thumb2">
+        <span><i class="material-icons btn-thumb">add_a_photo</i></span>
+        <%= f.file_field :foto %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :foto %>
-    <%= f.file_field :foto %>
+  <div class="col m2 s6 l2 push-l3">
+    <%= f.submit "Publicar", class:'btn-flat blue white-text waves-effect'%>
   </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>

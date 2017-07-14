@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+    <% @topfotos.each do |topfoto| %>
+      <!-- <tr>
+        <td></td>
+        <td><</td>
+        <td><%= link_to 'Show', topfoto %></td>
+        <td><%= link_to 'Edit', edit_topfoto_path(topfoto) %></td>
+        <td><%= link_to 'Destroy', topfoto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr> -->
+      <div class="row">
+        <div class="col s7 m5 push-m3">
+          <div class="card">
+            <div class="card-image">
+              <%= image_tag topfoto.foto.url %>
+              <span class="card-title"><%= topfoto.descricao %></span>
+            </div>
+
+            <div class="card-action">
+              <button class="white-text btn-flat waves-effect red btn-floating"><i class="material-icons">favorite</i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+<div class="fixed-action-btn vertical ">
+<a href="/topfotos/new" class="btn-floating btn-large waves-effect waves-light pink"><i class="material-icons">add</i></a>
+</div>

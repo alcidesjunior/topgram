@@ -13,15 +13,17 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
+#gem para o projeto
 gem 'sass-rails', '~> 5.0'
 gem 'materialize-sass', '~> 0.99'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

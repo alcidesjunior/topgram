@@ -1,5 +1,50 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
 @import "materialize/components/color";
 $primary-color: color("pink", "darken-2") !default;
-$secondary-color: color("yellow", "base") !default;
+$secondary-color: color("pink", "darken-3") !default;
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "materialize";
+
+$desktop-width: 1200px;
+$mobile-width: 767px;
+$mobile-xs-width: 357px;
+.circle{
+  border-radius: 50%;
+}
+@mixin desktop {
+  @media only screen and (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media only screen and (min-width: #{$mobile-width}) and (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media only screen and (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+@mixin mobile-xs {
+  @media only screen and (max-width: #{$mobile-xs-width}) {
+    @content;
+  }
+}
+#toplogo{
+  @include desktop{
+    width: 90%;
+  }
+  @include mobile{
+    width: 124%;
+  }
+  @include mobile-xs{
+    width: 170%;
+  }
+  @include tablet{
+    width: 90%;
+  }
+}

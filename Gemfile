@@ -17,6 +17,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'materialize-sass', '~> 0.99'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'material-icons-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

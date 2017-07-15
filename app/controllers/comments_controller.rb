@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to '/', notice: 'Comment was successfully created.' }
+        format.html { redirect_to '/', notice: 'Comentário adicionado' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(topfoto_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @comment, notice: 'Comentário atualizado' }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to topfotos_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to topfotos_url, notice: 'Comentário deletado' }
       format.json { head :no_content }
     end
   end

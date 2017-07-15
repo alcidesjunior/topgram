@@ -27,7 +27,7 @@
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Comentários<i class="material-icons right">close</i></span>
                 <%topfoto.comments.order('id DESC').each do |item|%>
-                  <strong>Anônimo</strong><br><%=item.comentario%> <br><small><%=time_ago_in_words(item.created_at)%></small><br><br>
+                  <strong>Anônimo</strong><br><%=item.comentario%> - <small><%=time_ago_in_words(item.created_at)%></small>
                 <%end%>
             </div>
             <div class="card-action">

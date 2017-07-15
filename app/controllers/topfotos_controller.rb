@@ -29,7 +29,7 @@ class TopfotosController < ApplicationController
 
     respond_to do |format|
       if @topfoto.save
-        format.html { redirect_to '/', notice: 'Topfoto was successfully created.' }
+        format.html { redirect_to '/', notice: 'Post adicionado' }
         format.json { render :show, status: :created, location: @topfoto }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class TopfotosController < ApplicationController
   def update
     respond_to do |format|
       if @topfoto.update(topfoto_params)
-        format.html { redirect_to @topfoto, notice: 'Topfoto was successfully updated.' }
+        format.html { redirect_to @topfoto, notice: 'Post atualizado' }
         format.json { render :show, status: :ok, location: @topfoto }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class TopfotosController < ApplicationController
   def destroy
     @topfoto.destroy
     respond_to do |format|
-      format.html { redirect_to topfotos_url, notice: 'Topfoto was successfully destroyed.' }
+      format.html { redirect_to topfotos_url, notice: 'Post deletado' }
       format.json { head :no_content }
     end
   end
